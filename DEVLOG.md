@@ -23,3 +23,30 @@
 - Build spend input form
 - Create pricing dataset
 - Start audit engine implementation
+
+# Day 2 - 2026-05-21
+
+**Hours worked:** 4
+
+**What I did:**
+- Built responsive navbar
+- Created reusable Hero component
+- Added AI pricing dataset
+- Built reusable ToolCard component
+- Created audit form section
+- Improved SaaS UI layout
+- Added hover interactions for cards
+
+**What I learned:**
+- Learned reusable React component structure
+- Improved understanding of TypeScript props and interfaces
+- Learned better Tailwind spacing and layout patterns
+
+**Blockers / what I'm stuck on:**
+- Need interactive tool selection logic
+- Need recommendation calculation engine
+
+**Plan for tomorrow:**
+- Build audit calculation logic
+- Add savings recommendations
+- Create interactive tool selection
