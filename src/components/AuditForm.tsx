@@ -3,7 +3,7 @@ import ToolCard from "./ToolCard";
 
 function AuditForm() {
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-24">
+    <section className="mx-auto max-w-6xl px-6 pb-24">
       <div className="mb-10 text-center">
         <h2 className="text-4xl font-bold text-white">
           Your AI Stack
