@@ -7,15 +7,15 @@ function Navbar() {
         </h1>
 
         <nav className="hidden gap-6 text-sm text-gray-300 md:flex">
-          <a href="#" className="hover:text-white">
+          <a href="#features" className="hover:text-white">
             Features
           </a>
 
-          <a href="#" className="hover:text-white">
+          <a href="#pricing" className="hover:text-white">
             Pricing
           </a>
 
-          <a href="#" className="hover:text-white">
+          <a href="#faq" className="hover:text-white">
             FAQ
           </a>
         </nav>
