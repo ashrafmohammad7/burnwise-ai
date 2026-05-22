@@ -50,3 +50,30 @@
 - Build audit calculation logic
 - Add savings recommendations
 - Create interactive tool selection
+
+# Day 3 - 2026-05-22
+
+**Hours worked:** 5
+
+**What I did:**
+- Built audit calculation engine
+- Added interactive tool selection
+- Created audit results dashboard
+- Implemented savings calculations
+- Added recommendation generation logic
+- Improved selected tool visual states
+
+**What I learned:**
+- Learned React state management
+- Understood dynamic rendering workflows
+- Learned how business logic connects with UI
+
+**Blockers / what I'm stuck on:**
+- Need more realistic pricing logic
+- Need better recommendation sophistication
+
+**Plan for tomorrow:**
+- Add team size inputs
+- Improve audit recommendations
+- Build better savings logic
+- Add results polish
