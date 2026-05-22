@@ -2,11 +2,18 @@ import type { Tool } from "../types";
 
 interface Props {
   tool: Tool;
+  selected?: boolean;
 }
 
-function ToolCard({ tool }: Props) {
+function ToolCard({ tool, selected }: Props) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 transition duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-white/10">
+    <div
+  className={`rounded-2xl border p-5 transition duration-300 hover:-translate-y-1 ${
+    selected
+      ? "border-green-400 bg-green-500/10"
+      : "border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10"
+  }`}
+>
       <h3 className="text-lg font-semibold text-white">
         {tool.name}
       </h3>
