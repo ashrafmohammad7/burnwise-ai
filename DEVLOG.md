@@ -77,3 +77,33 @@
 - Improve audit recommendations
 - Build better savings logic
 - Add results polish
+
+## Day 4
+
+### Completed
+- Built AuditControls component
+- Added team size input field
+- Added monthly budget control
+- Added primary use-case dropdown
+- Connected state management using React hooks
+- Improved audit result calculations
+- Added dynamic recommendation generation
+- Enhanced user interaction flow
+
+### Learned
+- Managing state with useState
+- Passing props between components
+- Dynamic rendering in React
+- Controlled form inputs
+- Conditional recommendation logic
+
+### Blockers
+- AuditControls component initially not rendering
+- Forgot to include component inside App.tsx
+- Dropdown alignment required adjustments
+
+### Plan for Next Day
+- Add loading states and animations
+- Improve mobile responsiveness
+- Add reset audit functionality
+- Refine UI spacing and transitions
