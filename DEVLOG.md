@@ -78,7 +78,7 @@
 - Build better savings logic
 - Add results polish
 
-## Day 4
+## Day 4 - 2026-05-23
 
 ### Completed
 - Built AuditControls component
@@ -107,3 +107,36 @@
 - Improve mobile responsiveness
 - Add reset audit functionality
 - Refine UI spacing and transitions
+
+## Day 5 - UX Improvements and Input Controls - 2026-05-24
+
+### What I Built
+- Added Team Size input field
+- Added Monthly Budget input field
+- Added Primary Use Case dropdown
+- Added Reset Audit functionality
+- Improved audit interaction flow
+- Added loading state while generating audit report
+
+### What I Learned
+- Managing multiple UI states using React hooks
+- Handling controlled form inputs
+- Improving user experience with loading states
+- Structuring reusable audit logic
+
+### Blockers Faced
+- Layout spacing issues after adding controls
+- State updates not reflecting immediately
+- Button alignment inconsistencies
+
+### Fixes Applied
+- Improved flex and grid spacing
+- Refactored button section layout
+- Added dedicated reset function
+- Cleaned audit calculation flow
+
+### Plan for Next Day
+- Add local storage support
+- Improve mobile responsiveness
+- Add small animations and polish
+- Refactor components for cleaner structure

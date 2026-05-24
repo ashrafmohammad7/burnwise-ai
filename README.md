@@ -2,7 +2,18 @@
 
 Burnwise AI is an AI spend audit platform that helps startups identify overspending across AI tools like ChatGPT, Claude, Cursor, Copilot, and Gemini.
 
-Users can input their AI stack, monthly spend, team size, and usage patterns to receive actionable savings recommendations instantly.
+Users can input their AI stack, monthly spend, team size, budget, and usage preferences to receive actionable savings recommendations instantly.
+
+## Features
+
+- Interactive AI tool selection
+- AI spend audit report generation
+- Team size and monthly budget inputs
+- Primary use case selection
+- Dynamic savings recommendations
+- Reset audit functionality
+- Responsive dark-themed dashboard
+- Real-time audit calculation logic
 
 ## Tech Stack
 
@@ -12,6 +23,16 @@ Users can input their AI stack, monthly spend, team size, and usage patterns to 
 - Vite
 - Vercel
 
-## Status
+## Project Structure
 
-Work in progress.
+```bash
+src/
+ ├── components/
+ ├── data/
+ ├── types/
+ ├── utils/
+ └── App.tsx
+
+ Deployment
+
+Live Deployment : https://burnwise-ai.vercel.app
