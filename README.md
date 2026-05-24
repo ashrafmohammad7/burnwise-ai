@@ -23,6 +23,10 @@ Users can input their AI stack, monthly spend, team size, budget, and usage pref
 - Vite
 - Vercel
 
+## Deployment
+
+Live Deployment : https://burnwise-ai.vercel.app
+
 ## Project Structure
 
 ```bash
@@ -34,6 +38,3 @@ src/
  └── App.tsx
 
 
-Deployment
-
-Live Deployment : https://burnwise-ai.vercel.app
