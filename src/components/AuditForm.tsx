@@ -14,6 +14,7 @@ function AuditForm() {
   >([]);
 
   const [result, setResult] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
 
   function handleToolSelect(
     name: string,
@@ -45,9 +46,20 @@ function AuditForm() {
   }
 
   function runAudit() {
-    const audit = calculateAudit(selectedTools);
+    setLoading(true);
 
-    setResult(audit);
+    setTimeout(() => {
+      const audit = calculateAudit(selectedTools);
+
+      setResult(audit);
+
+      setLoading(false);
+    }, 1200);
+  }
+
+  function resetAudit() {
+    setSelectedTools([]);
+    setResult(null);
   }
 
   return (
@@ -79,22 +91,31 @@ function AuditForm() {
               className="cursor-pointer"
             >
               <ToolCard
-  tool={tool}
-  selected={selectedTools.some(
-    (selectedTool) =>
-      selectedTool.name === tool.name
-  )}
-/>
+                tool={tool}
+                selected={selectedTools.some(
+                  (selectedTool) =>
+                    selectedTool.name === tool.name
+                )}
+              />
             </div>
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 flex flex-col items-center gap-4">
           <button
             onClick={runAudit}
             className="rounded-2xl bg-white px-8 py-4 text-lg font-semibold text-black transition hover:scale-105"
           >
-            Run AI Audit
+            {loading
+              ? "Generating Report..."
+              : "Run AI Audit"}
+          </button>
+
+          <button
+            onClick={resetAudit}
+            className="rounded-xl border border-gray-700 bg-transparent px-6 py-3 text-white transition hover:bg-gray-900"
+          >
+            Reset Audit
           </button>
         </div>
       </section>
