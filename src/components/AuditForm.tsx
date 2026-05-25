@@ -74,7 +74,9 @@ function AuditForm() {
           </h2>
 
           <p className="mt-4 text-gray-400">
-            Select the tools your team currently pays for.
+            Select the AI tools your team currently
+            uses across engineering, research,
+            writing, and collaboration workflows.
           </p>
         </div>
 
@@ -102,9 +104,10 @@ function AuditForm() {
         </div>
 
         <div className="mt-10 flex flex-col items-center gap-4">
+
           <button
             onClick={runAudit}
-            className="rounded-2xl bg-white px-8 py-4 text-lg font-semibold text-black transition hover:scale-105"
+            className="rounded-2xl bg-white px-8 py-4 text-lg font-semibold text-black transition duration-300 hover:scale-105 hover:bg-gray-200"
           >
             {loading
               ? "Generating Report..."
@@ -117,6 +120,7 @@ function AuditForm() {
           >
             Reset Audit
           </button>
+
         </div>
       </section>
 

@@ -16,34 +16,49 @@ const AuditControls = ({
   setUseCase,
 }: Props) => {
   return (
-    <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-3 gap-6">
-      
-      <div className="bg-black border border-zinc-800 rounded-2xl p-6">
-        <label className="text-zinc-400 text-sm">Team Size</label>
+    <div className="mx-auto mt-12 grid max-w-5xl gap-6 px-6 md:grid-cols-3">
+
+      <div className="rounded-2xl border border-zinc-800 bg-black p-6">
+        <label className="text-sm text-zinc-400">
+          Team Size
+        </label>
+
         <input
           type="number"
           value={teamSize}
-          onChange={(e) => setTeamSize(Number(e.target.value))}
-          className="w-full mt-2 bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white"
+          onChange={(e) =>
+            setTeamSize(Number(e.target.value))
+          }
+          className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-white"
         />
       </div>
 
-      <div className="bg-black border border-zinc-800 rounded-2xl p-6">
-        <label className="text-zinc-400 text-sm">Monthly Budget</label>
+      <div className="rounded-2xl border border-zinc-800 bg-black p-6">
+        <label className="text-sm text-zinc-400">
+          Monthly Budget
+        </label>
+
         <input
           type="number"
           value={monthlyBudget}
-          onChange={(e) => setMonthlyBudget(Number(e.target.value))}
-          className="w-full mt-2 bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white"
+          onChange={(e) =>
+            setMonthlyBudget(Number(e.target.value))
+          }
+          className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-white"
         />
       </div>
 
-      <div className="bg-black border border-zinc-800 rounded-2xl p-6">
-        <label className="text-zinc-400 text-sm">Primary Use Case</label>
+      <div className="rounded-2xl border border-zinc-800 bg-black p-6">
+        <label className="text-sm text-zinc-400">
+          Primary Use Case
+        </label>
+
         <select
           value={useCase}
-          onChange={(e) => setUseCase(e.target.value)}
-          className="w-full mt-2 bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white"
+          onChange={(e) =>
+            setUseCase(e.target.value)
+          }
+          className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-white"
         >
           <option>Development</option>
           <option>Content Writing</option>
@@ -52,6 +67,7 @@ const AuditControls = ({
           <option>Marketing</option>
         </select>
       </div>
+
     </div>
   );
 };

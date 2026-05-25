@@ -14,17 +14,56 @@ export function calculateAudit(
   const recommendations: string[] = [];
 
   selectedTools.forEach((tool) => {
-    if (tool.seats <= 2 && tool.monthlyPrice >= 20) {
-      estimatedSavings += 10;
+    if (
+      tool.name.includes("ChatGPT") &&
+      tool.seats <= 3
+    ) {
+      estimatedSavings += 12;
 
       recommendations.push(
-        `${tool.name}: Consider downgrading to a cheaper plan for small teams.`
+        "Your team may be overpaying for separate ChatGPT Plus subscriptions. Consolidating into ChatGPT Team could simplify billing and reduce monthly costs."
       );
     }
 
-    if (tool.name.includes("ChatGPT")) {
+    if (
+      tool.name.includes("Cursor") &&
+      tool.seats <= 2
+    ) {
+      estimatedSavings += 8;
+
       recommendations.push(
-        "Evaluate whether Claude or Gemini can replace some ChatGPT usage."
+        "Cursor Pro appears underutilized for a small team. Reducing unused premium seats may lower recurring expenses."
+      );
+    }
+
+    if (
+      tool.name.includes("Claude") &&
+      tool.seats <= 3
+    ) {
+      estimatedSavings += 10;
+
+      recommendations.push(
+        "Claude Pro usage overlaps with other AI assistants in your stack. Consider limiting duplicate subscriptions for non-daily users."
+      );
+    }
+
+    if (
+      tool.name.includes("Gemini")
+    ) {
+      estimatedSavings += 5;
+
+      recommendations.push(
+        "Gemini Advanced may provide overlapping functionality with ChatGPT or Claude. Reviewing tool redundancy could improve budget efficiency."
+      );
+    }
+
+    if (
+      tool.name.includes("Copilot")
+    ) {
+      estimatedSavings += 6;
+
+      recommendations.push(
+        "GitHub Copilot usage is typically highest in larger engineering teams. Smaller teams may benefit from fewer active licenses."
       );
     }
   });
@@ -32,7 +71,8 @@ export function calculateAudit(
   return {
     totalMonthlySpend,
     estimatedSavings,
-    annualSavings: estimatedSavings * 12,
+    annualSavings:
+      estimatedSavings * 12,
     recommendations,
   };
 }
