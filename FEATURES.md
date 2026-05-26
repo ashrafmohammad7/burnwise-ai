@@ -4,12 +4,15 @@
 
 - AI spend audit dashboard
 - Interactive AI tool selection
-- Monthly spend analysis
-- Annual savings estimation
-- AI stack optimization recommendations
 - Team size and budget controls
-- Responsive dark-themed UI
-- Loading and reset functionality
+- AI-generated optimization summary
+- Monthly and annual savings estimation
+- Dynamic optimization recommendations
+- LocalStorage persistence
+- Shareable audit URLs
+- Email capture workflow
+- Responsive dark-themed dashboard
+- Real-time audit calculations
 
 ## Supported AI Tools
 
@@ -18,11 +21,14 @@
 - Cursor
 - GitHub Copilot
 - Gemini
+- OpenAI API
+- Anthropic API
+- v0
 
-## Optimization Insights
+## Engineering Features
 
-Burnwise AI identifies:
-- duplicate tooling
-- underutilized subscriptions
-- unnecessary premium seats
-- overlapping AI assistant usage
+- Automated audit engine tests
+- GitHub Actions CI workflow
+- TypeScript support
+- Responsive mobile layout
+- Open Graph metadata support

@@ -23,3 +23,14 @@
 ## Deployment
 
 - Vercel
+
+## Scalability Notes
+
+If Burnwise AI needed to support 10k+ audits per day, I would:
+
+- Move persistence to Supabase or PostgreSQL
+- Add server-side audit storage
+- Cache pricing data centrally
+- Add API rate limiting
+- Move AI summary generation to backend workers
+- Add analytics and monitoring infrastructure

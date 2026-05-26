@@ -15,3 +15,7 @@ Covers:
 ```bash
 npm run test
 ```
+
+## CI Integration
+
+Tests run automatically on every push to main using GitHub Actions.
