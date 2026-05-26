@@ -45,11 +45,14 @@ Live Deployment : https://burnwise-ai.vercel.app
 
 ```bash
 src/
- ├── components/
- ├── data/
- ├── types/
- ├── utils/
- └── App.tsx
+├── components/
+├── data/
+├── types/
+├── utils/
+└── App.tsx
+```
+
+---
 
 ## Installation
 
