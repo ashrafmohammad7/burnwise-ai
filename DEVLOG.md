@@ -1,191 +1,197 @@
-# Day 1 - 2026-05-20
+# Development Log
 
-**Hours worked:** 4
+## Day 1 — 2026-05-20
 
-**What I did:**
-- Created React + Vite + TypeScript project
-- Installed and configured Tailwind CSS
-- Built first landing page hero section
-- Initialized Git repository
+**Hours worked:** 3
+
+**What I did:**  
+- Created Burnwise AI repository
+- Initialized React + TypeScript + Vite project
+- Configured Tailwind CSS
 - Connected GitHub repository
-- Deployed initial version to Vercel
+- Setup Vercel deployment
+- Created initial README.md
 
-**What I learned:**
-- Understood modern frontend setup workflow
-- Learned GitHub + Vercel deployment process
-- Started understanding SaaS product structure
+**What I learned:**  
+- Better understanding of Vite project setup
+- Connecting GitHub with Vercel deployment
+- Structuring frontend SaaS projects
 
-**Blockers / what I'm stuck on:**
-- Need structured pricing data for audit engine
-- Need to design recommendation logic
+**Blockers / what I'm stuck on:**  
+- Initial deployment configuration issues on Vercel
+- Git branch linking confusion during first push
 
-**Plan for tomorrow:**
-- Build spend input form
-- Create pricing dataset
-- Start audit engine implementation
+**Plan for tomorrow:**  
+- Build landing page UI
+- Add hero section and navbar
+- Create AI tool card layout
 
-# Day 2 - 2026-05-21
+---
 
-**Hours worked:** 4
-
-**What I did:**
-- Built responsive navbar
-- Created reusable Hero component
-- Added AI pricing dataset
-- Built reusable ToolCard component
-- Created audit form section
-- Improved SaaS UI layout
-- Added hover interactions for cards
-
-**What I learned:**
-- Learned reusable React component structure
-- Improved understanding of TypeScript props and interfaces
-- Learned better Tailwind spacing and layout patterns
-
-**Blockers / what I'm stuck on:**
-- Need interactive tool selection logic
-- Need recommendation calculation engine
-
-**Plan for tomorrow:**
-- Build audit calculation logic
-- Add savings recommendations
-- Create interactive tool selection
-
-# Day 3 - 2026-05-22
+## Day 2 — 2026-05-21
 
 **Hours worked:** 5
 
-**What I did:**
-- Built audit calculation engine
-- Added interactive tool selection
-- Created audit results dashboard
-- Implemented savings calculations
-- Added recommendation generation logic
-- Improved selected tool visual states
+**What I did:**  
+- Built responsive navbar and hero section
+- Added AI tool cards
+- Created initial pricing dataset
+- Added reusable component structure
+- Improved Tailwind styling
 
-**What I learned:**
-- Learned React state management
-- Understood dynamic rendering workflows
-- Learned how business logic connects with UI
+**What I learned:**  
+- Reusable React component organization
+- Responsive layout techniques using Tailwind
+- Managing component props cleanly
 
-**Blockers / what I'm stuck on:**
-- Need more realistic pricing logic
-- Need better recommendation sophistication
+**Blockers / what I'm stuck on:**  
+- Navbar responsiveness on smaller screens
+- Card spacing inconsistencies
 
-**Plan for tomorrow:**
-- Add team size inputs
-- Improve audit recommendations
-- Build better savings logic
-- Add results polish
+**Plan for tomorrow:**  
+- Build audit calculation logic
+- Add audit results section
+- Improve interaction flow
 
-## Day 4 - 2026-05-23
+---
 
-### Completed
-- Built AuditControls component
-- Added team size input field
-- Added monthly budget control
-- Added primary use-case dropdown
-- Connected state management using React hooks
-- Improved audit result calculations
-- Added dynamic recommendation generation
-- Enhanced user interaction flow
+## Day 3 — 2026-05-22
 
-### Learned
-- Managing state with useState
-- Passing props between components
-- Dynamic rendering in React
-- Controlled form inputs
-- Conditional recommendation logic
+**Hours worked:** 5
 
-### Blockers
-- AuditControls component initially not rendering
-- Forgot to include component inside App.tsx
-- Dropdown alignment required adjustments
+**What I did:**  
+- Built audit engine logic
+- Added spend calculations
+- Added estimated savings calculations
+- Created recommendation rendering section
+- Improved dashboard styling
+- Added architecture documentation
 
-### Plan for Next Day
-- Add loading states and animations
-- Improve mobile responsiveness
-- Add reset audit functionality
-- Refine UI spacing and transitions
+**What I learned:**  
+- Handling calculation logic in utility functions
+- Structuring frontend business logic
+- Separating UI and audit engine responsibilities
 
-## Day 5 - UX Improvements and Input Controls - 2026-05-24
+**Blockers / what I'm stuck on:**  
+- Recommendation text initially felt repetitive
+- Calculation state updates occasionally delayed
 
-### What I Built
-- Added Team Size input field
-- Added Monthly Budget input field
-- Added Primary Use Case dropdown
-- Added Reset Audit functionality
-- Improved audit interaction flow
-- Added loading state while generating audit report
+**Plan for tomorrow:**  
+- Add advanced controls
+- Improve UX flow
+- Refine recommendation logic
 
-### What I Learned
-- Managing multiple UI states using React hooks
-- Handling controlled form inputs
-- Improving user experience with loading states
-- Structuring reusable audit logic
+---
 
-### Blockers Faced
-- Layout spacing issues after adding controls
-- State updates not reflecting immediately
-- Button alignment inconsistencies
+## Day 4 — 2026-05-23
 
-### Fixes Applied
-- Improved flex and grid spacing
-- Refactored button section layout
-- Added dedicated reset function
-- Cleaned audit calculation flow
+**Hours worked:** 4
 
-### Plan for Next Day
-- Add local storage support
-- Improve mobile responsiveness
-- Add small animations and polish
-- Refactor components for cleaner structure
+**What I did:**  
+- Added team size input
+- Added monthly budget controls
+- Added primary use case dropdown
+- Improved audit report layout
+- Added reset audit functionality
+- Improved mobile responsiveness
 
+**What I learned:**  
+- Managing multiple controlled inputs
+- Improving dashboard usability
+- Structuring user interaction flows
 
-## Day 6 - Product Realism and UX Refinement - 2026-05-25
+**Blockers / what I'm stuck on:**  
+- Layout alignment issues after adding controls
+- Button spacing inconsistencies
 
-### What I Built
-- Improved AI spend optimization recommendations
-- Added more realistic SaaS audit messaging
-- Refined audit report wording
-- Improved mobile spacing and layout
-- Enhanced audit button interactions
+**Plan for tomorrow:**  
+- Improve audit realism
+- Add better optimization recommendations
+- Improve product polish
 
-### What I Learned
-- Writing more realistic product recommendations
-- Improving user experience using small UI refinements
-- Making frontend interactions feel more natural
+---
 
-### Blockers Faced
-- Recommendation wording initially felt repetitive
-- Mobile spacing issues on smaller screens
+## Day 5 — 2026-05-24
 
-### Fixes Applied
-- Refined recommendation conditions
-- Updated spacing utilities for responsiveness
-- Improved report summary structure
+**Hours worked:** 6
 
-### Plan for Next Day
-- Final cleanup and polish
-- Improve README screenshots and formatting
-- Add final documentation
-- Verify deployment and responsiveness
-
-## Day 7 - Final Polish and Submission Preparation - 2026-05-26
-
-### What I Completed
-- Finalized README documentation
+**What I did:**  
+- Improved recommendation quality
+- Added more realistic SaaS optimization messaging
+- Added loading state during audit generation
+- Improved audit results hierarchy
 - Added screenshots folder
+- Improved README documentation
+
+**What I learned:**  
+- Writing more realistic product recommendations
+- Improving frontend UX using small interactions
+- Building more believable SaaS workflows
+
+**Blockers / what I'm stuck on:**  
+- Generic recommendations felt unrealistic
+- Recommendation wording required multiple iterations
+
+**Plan for tomorrow:**  
+- Add persistence using localStorage
+- Add testing setup
+- Add additional documentation files
+
+---
+
+## Day 6 — 2026-05-25
+
+**Hours worked:** 7
+
+**What I did:**  
+- Added localStorage persistence
+- Added AI summary section
+- Added email capture UI
+- Added shareable audit URL handling
+- Added testing setup using Vitest
+- Added GitHub Actions CI workflow
+- Added PROMPTS.md and TESTS.md
+- Expanded pricing dataset with plan support
+
+**What I learned:**  
+- Persisting frontend state using localStorage
+- Writing basic automated tests
+- Configuring CI workflows on GitHub Actions
+- Improving frontend project completeness
+
+**Blockers / what I'm stuck on:**  
+- CI workflow initially failed due to missing test script
+- URL routing handling needed simplification
+
+**Plan for tomorrow:**  
+- Final cleanup
+- Improve documentation quality
+- Final deployment verification
+- Prepare final submission
+
+---
+
+## Day 7 — 2026-05-26
+
+**Hours worked:** 5
+
+**What I did:**  
+- Finalized README structure
+- Added GTM.md, ECONOMICS.md, METRICS.md, and LANDING_COPY.md
 - Improved repository organization
-- Added feature documentation
-- Verified deployment and responsiveness
-- Cleaned UI consistency issues
+- Verified deployment responsiveness
+- Fixed markdown formatting issues
+- Cleaned UI spacing inconsistencies
+- Finalized screenshots and documentation
 
-### What I Learned
-- Structuring frontend SaaS projects
-- Writing cleaner project documentation
-- Improving product realism using simple logic
-- Maintaining realistic development workflow
+**What I learned:**  
+- Structuring startup-style product documentation
+- Thinking about SaaS economics and distribution
+- Importance of realistic product positioning
 
-### Final Notes
-Burnwise AI was developed as a lightweight AI spend optimization MVP focused on realistic SaaS workflows and frontend user experience.
+**Blockers / what I'm stuck on:**  
+- Balancing feature scope with assignment deadline
+- Deciding which backend features to prioritize within limited time
+
+**Plan for tomorrow:**  
+- Final submission

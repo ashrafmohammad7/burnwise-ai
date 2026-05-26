@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { tools } from "../data/pricing";
 import type { SelectedTool } from "../types";
 
 import ToolCard from "./ToolCard";
 import AuditResults from "./AuditResults";
+import AuditControls from "./AuditControls";
 
 import { calculateAudit } from "../utils/auditEngine";
 
@@ -14,7 +15,56 @@ function AuditForm() {
   >([]);
 
   const [result, setResult] = useState<any>(null);
+
   const [loading, setLoading] = useState(false);
+
+  const [teamSize, setTeamSize] = useState(5);
+
+  const [monthlyBudget, setMonthlyBudget] =
+    useState(200);
+
+  const [useCase, setUseCase] = useState(
+    "Development"
+  );
+
+  useEffect(() => {
+    const savedData = localStorage.getItem(
+      "burnwise-audit"
+    );
+
+    if (savedData) {
+      const parsed = JSON.parse(savedData);
+
+      setSelectedTools(parsed.selectedTools || []);
+
+      setTeamSize(parsed.teamSize || 5);
+
+      setMonthlyBudget(
+        parsed.monthlyBudget || 200
+      );
+
+      setUseCase(
+        parsed.useCase || "Development"
+      );
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "burnwise-audit",
+      JSON.stringify({
+        selectedTools,
+        teamSize,
+        monthlyBudget,
+        useCase,
+      })
+    );
+  }, [
+    selectedTools,
+    teamSize,
+    monthlyBudget,
+    useCase,
+  ]);
 
   function handleToolSelect(
     name: string,
@@ -49,9 +99,19 @@ function AuditForm() {
     setLoading(true);
 
     setTimeout(() => {
-      const audit = calculateAudit(selectedTools);
+      const audit = calculateAudit(
+        selectedTools
+      );
 
       setResult(audit);
+
+      const auditId = crypto.randomUUID();
+
+      window.history.pushState(
+        {},
+        "",
+        `/audit/${auditId}`
+      );
 
       setLoading(false);
     }, 1200);
@@ -59,24 +119,39 @@ function AuditForm() {
 
   function resetAudit() {
     setSelectedTools([]);
+
     setResult(null);
+
+    localStorage.removeItem(
+      "burnwise-audit"
+    );
   }
 
   return (
     <>
+      <AuditControls
+        teamSize={teamSize}
+        setTeamSize={setTeamSize}
+        monthlyBudget={monthlyBudget}
+        setMonthlyBudget={setMonthlyBudget}
+        useCase={useCase}
+        setUseCase={setUseCase}
+      />
+
       <section
-        id="pricing"
+        id="features"
         className="mx-auto max-w-6xl px-6 pb-24"
       >
         <div className="mb-10 text-center">
-          <h2 className="text-4xl font-bold text-white">
+          <h2 className="text-5xl font-bold text-white">
             Your AI Stack
           </h2>
 
-          <p className="mt-4 text-gray-400">
-            Select the AI tools your team currently
-            uses across engineering, research,
-            writing, and collaboration workflows.
+          <p className="mt-6 text-lg text-gray-400">
+            Select the AI tools your team
+            currently uses across engineering,
+            research, writing, and
+            collaboration workflows.
           </p>
         </div>
 
@@ -96,18 +171,18 @@ function AuditForm() {
                 tool={tool}
                 selected={selectedTools.some(
                   (selectedTool) =>
-                    selectedTool.name === tool.name
+                    selectedTool.name ===
+                    tool.name
                 )}
               />
             </div>
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col items-center gap-4">
-
+        <div className="mt-12 flex flex-col items-center gap-4">
           <button
             onClick={runAudit}
-            className="rounded-2xl bg-white px-8 py-4 text-lg font-semibold text-black transition duration-300 hover:scale-105 hover:bg-gray-200"
+            className="rounded-2xl bg-white px-8 py-4 text-lg font-semibold text-black transition hover:scale-105"
           >
             {loading
               ? "Generating Report..."
@@ -120,11 +195,12 @@ function AuditForm() {
           >
             Reset Audit
           </button>
-
         </div>
       </section>
 
-      {result && <AuditResults result={result} />}
+      {result && (
+        <AuditResults result={result} />
+      )}
     </>
   );
 }
