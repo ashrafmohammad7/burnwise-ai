@@ -5,6 +5,7 @@ import type { SelectedTool } from "../types";
 
 import ToolCard from "./ToolCard";
 import AuditResults from "./AuditResults";
+import AuditControls from "./AuditControls";
 
 import { calculateAudit } from "../utils/auditEngine";
 
@@ -16,43 +17,38 @@ type AuditResult = {
 };
 
 function AuditForm() {
+  const savedData =
+    typeof window !== "undefined"
+      ? localStorage.getItem("burnwise-audit")
+      : null;
+
+  const parsedData = savedData
+    ? JSON.parse(savedData)
+    : null;
+
   const [selectedTools, setSelectedTools] =
     useState<SelectedTool[]>([]);
+
+  const [teamSize, setTeamSize] =
+    useState<number>(
+      parsedData?.teamSize || 5
+    );
+
+  const [monthlyBudget, setMonthlyBudget] =
+    useState<number>(
+      parsedData?.monthlyBudget || 200
+    );
+
+  const [useCase, setUseCase] =
+    useState<string>(
+      parsedData?.useCase || "Development"
+    );
 
   const [result, setResult] =
     useState<AuditResult | null>(null);
 
   const [loading, setLoading] =
     useState(false);
-
-  const [teamSize, setTeamSize] =
-    useState(5);
-
-  const [monthlyBudget, setMonthlyBudget] =
-    useState(200);
-
-  const [useCase, setUseCase] =
-    useState("Development");
-
-  useEffect(() => {
-    const savedData = localStorage.getItem(
-      "burnwise-audit"
-    );
-
-    if (savedData) {
-      const parsed = JSON.parse(savedData);
-
-      setTeamSize(parsed.teamSize || 5);
-
-      setMonthlyBudget(
-        parsed.monthlyBudget || 200
-      );
-
-      setUseCase(
-        parsed.useCase || "Development"
-      );
-    }
-  }, []);
 
   useEffect(() => {
     localStorage.setItem(
@@ -127,16 +123,19 @@ function AuditForm() {
     localStorage.removeItem(
       "burnwise-audit"
     );
-
-    setTeamSize(5);
-
-    setMonthlyBudget(200);
-
-    setUseCase("Development");
   }
 
   return (
     <>
+      <AuditControls
+        teamSize={teamSize}
+        setTeamSize={setTeamSize}
+        monthlyBudget={monthlyBudget}
+        setMonthlyBudget={setMonthlyBudget}
+        useCase={useCase}
+        setUseCase={setUseCase}
+      />
+
       <section
         id="features"
         className="mx-auto max-w-6xl px-6 pb-24"
@@ -152,78 +151,6 @@ function AuditForm() {
             research, writing, and
             collaboration workflows.
           </p>
-        </div>
-
-        <div className="mb-12 grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-zinc-800 bg-black p-6">
-            <label className="text-sm text-zinc-400">
-              Team Size
-            </label>
-
-            <input
-              type="number"
-              value={teamSize}
-              onChange={(e) =>
-                setTeamSize(
-                  Number(e.target.value)
-                )
-              }
-              className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-white"
-            />
-          </div>
-
-          <div className="rounded-2xl border border-zinc-800 bg-black p-6">
-            <label className="text-sm text-zinc-400">
-              Monthly Budget
-            </label>
-
-            <input
-              type="number"
-              value={monthlyBudget}
-              onChange={(e) =>
-                setMonthlyBudget(
-                  Number(e.target.value)
-                )
-              }
-              className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-white"
-            />
-          </div>
-
-          <div className="rounded-2xl border border-zinc-800 bg-black p-6">
-            <label className="text-sm text-zinc-400">
-              Primary Use Case
-            </label>
-
-            <select
-              value={useCase}
-              onChange={(e) =>
-                setUseCase(
-                  e.target.value
-                )
-              }
-              className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-white"
-            >
-              <option>
-                Development
-              </option>
-
-              <option>
-                Content Writing
-              </option>
-
-              <option>
-                Research
-              </option>
-
-              <option>
-                Design
-              </option>
-
-              <option>
-                Marketing
-              </option>
-            </select>
-          </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
