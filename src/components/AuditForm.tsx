@@ -1,70 +1,39 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { tools } from "../data/pricing";
 import type { SelectedTool } from "../types";
 
 import ToolCard from "./ToolCard";
 import AuditResults from "./AuditResults";
-import AuditControls from "./AuditControls";
 
 import { calculateAudit } from "../utils/auditEngine";
 
+type AuditResult = {
+  totalMonthlySpend: number;
+  estimatedSavings: number;
+  annualSavings: number;
+  recommendations: string[];
+};
+
 function AuditForm() {
-  const [selectedTools, setSelectedTools] = useState<
-    SelectedTool[]
-  >([]);
-
-  const [result, setResult] = useState<any>(null);
-
-  const [loading, setLoading] = useState(false);
-
-  const [teamSize, setTeamSize] = useState(5);
-
-  const [monthlyBudget, setMonthlyBudget] =
-    useState(200);
-
-  const [useCase, setUseCase] = useState(
-    "Development"
+  const savedData = localStorage.getItem(
+    "burnwise-audit"
   );
 
-  useEffect(() => {
-    const savedData = localStorage.getItem(
-      "burnwise-audit"
+  const parsedData = savedData
+    ? JSON.parse(savedData)
+    : null;
+
+  const [selectedTools, setSelectedTools] =
+    useState<SelectedTool[]>(
+      parsedData?.selectedTools || []
     );
 
-    if (savedData) {
-      const parsed = JSON.parse(savedData);
+  const [result, setResult] =
+    useState<AuditResult | null>(null);
 
-      setSelectedTools(parsed.selectedTools || []);
-
-      setTeamSize(parsed.teamSize || 5);
-
-      setMonthlyBudget(
-        parsed.monthlyBudget || 200
-      );
-
-      setUseCase(
-        parsed.useCase || "Development"
-      );
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem(
-      "burnwise-audit",
-      JSON.stringify({
-        selectedTools,
-        teamSize,
-        monthlyBudget,
-        useCase,
-      })
-    );
-  }, [
-    selectedTools,
-    teamSize,
-    monthlyBudget,
-    useCase,
-  ]);
+  const [loading, setLoading] =
+    useState(false);
 
   function handleToolSelect(
     name: string,
@@ -84,15 +53,27 @@ function AuditForm() {
       return;
     }
 
+    const newTool: SelectedTool = {
+      id: selectedTools.length + 1,
+      name,
+      monthlyPrice,
+      seats: 2,
+    };
+
     setSelectedTools([
       ...selectedTools,
-      {
-        id: Date.now(),
-        name,
-        monthlyPrice,
-        seats: 2,
-      },
+      newTool,
     ]);
+
+    localStorage.setItem(
+      "burnwise-audit",
+      JSON.stringify({
+        selectedTools: [
+          ...selectedTools,
+          newTool,
+        ],
+      })
+    );
   }
 
   function runAudit() {
@@ -105,7 +86,8 @@ function AuditForm() {
 
       setResult(audit);
 
-      const auditId = crypto.randomUUID();
+      const auditId =
+        crypto.randomUUID();
 
       window.history.pushState(
         {},
@@ -129,15 +111,6 @@ function AuditForm() {
 
   return (
     <>
-      <AuditControls
-        teamSize={teamSize}
-        setTeamSize={setTeamSize}
-        monthlyBudget={monthlyBudget}
-        setMonthlyBudget={setMonthlyBudget}
-        useCase={useCase}
-        setUseCase={setUseCase}
-      />
-
       <section
         id="features"
         className="mx-auto max-w-6xl px-6 pb-24"
