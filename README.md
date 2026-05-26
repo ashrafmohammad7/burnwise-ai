@@ -27,6 +27,20 @@ Users can input their AI stack, monthly spend, team size, budget, and usage pref
 
 Live Deployment : https://burnwise-ai.vercel.app
 
+## Screenshots
+
+### Landing Page
+
+![Landing Page](./screenshots/homepage.png)
+
+### AI Stack Selection
+
+![AI Stack Selection](./screenshots/audit-controls.png)
+
+### AI Spend Optimization Report
+
+![AI Spend Optimization Report](./screenshots/audit-report.png)
+
 ## Project Structure
 
 ```bash
@@ -37,4 +51,23 @@ src/
  ├── utils/
  └── App.tsx
 
+## Installation
 
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## Documentation
+
+- FEATURES.md
+- ARCHITECTURE.md
+- DEVLOG.md
+
+---
+
+## Status
+
+Frontend MVP completed and deployed successfully.
